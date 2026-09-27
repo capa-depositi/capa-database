@@ -1,0 +1,5 @@
+[project]
+ref = "" # Set with `supabase link --project-ref <ref>` when linking
+
+[migrations]
+directory = "database"
