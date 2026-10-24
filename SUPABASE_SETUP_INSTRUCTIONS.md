@@ -35,20 +35,9 @@ The SQL to create this structure is in [supabase/migrations](../supabase/migrati
 
 Run them **in order** — later files depend on schemas/tables created earlier.
 
-Additional migrations for this repository
-
-- `0001_capa_init.sql` — CAPA project schema (profiles, questions, answers, legal_rates, result_tokens).
-  File path: `supabase/migrations/0001_capa_init.sql` in this repository. This migration was generated
-  from the project's SQLite schema and backend code and targets PostgreSQL/Supabase.
-
-Seeding notes for CAPA
-
-- The repository includes SQL migrations for CAPA under `database/migrations/` (e.g. `0004_capa_init.sql`
-  and `0005_capa_seed.sql`). The `backend/scripts/init-db.js` script has been updated to apply these SQL
-  migrations (including seed inserts) directly to Postgres; the previous JSON seed files have been
-  removed from the repository. For Supabase, copy the SQL migration files into `supabase/migrations/`
-  (or keep them under `database/migrations/` and copy before running the CLI) and run `supabase db push`
-  so schema and seed SQL are applied in order.
+CAPA's schema and clean-development setup are maintained separately in
+[README_SETUP_SUPABASE.md](./README_SETUP_SUPABASE.md). CAPA uses the baseline and seed files in
+`capa-database/`; it does not use the App Hub migration files described above.
 
 ## 3. Apply the migrations to Supabase
 
